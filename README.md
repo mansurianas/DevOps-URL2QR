@@ -6,12 +6,8 @@ It generates QR Codes for the provided URL, the front-end is in NextJS and the A
 
 ## Goal to implement 
 
-- Version Control System (VCS)
-- Continuous integration and continuous deployment (CI/CD)
-- Infrastructure as Code (IaC)
-- Configuration Management
-- Containerization
-- Monitoring/Observability
+
+## Project Workflow 
 
 ## Application
 
