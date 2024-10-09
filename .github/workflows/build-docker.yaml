@@ -1,9 +1,9 @@
-name: Build and Push Docker Image
+name: CI Pipeline
 
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -23,3 +23,6 @@ jobs:
 
     - name: Push the Docker image to DockerHub
       run: docker push surajkumar00/devops-url2qr-api
+
+
+
