@@ -1,18 +1,32 @@
 ![DevOps-URL2QR Project](./Assets/DevOPs-url2qr.png)
 
-This is the sample application for the DevOps Capstone Project.
-It generates QR Codes for the provided URL, the front-end is in NextJS and the API is written in Python using FastAPI.
+A web app that converts a **URL to a QR Code**. The app has three components: `Front-end`, `API` and `Storage`. All 3 components should be hosted in containers utilizing the cloud provider of your choice. The sample application code is provided, your goals is to apply `DevOps practices` like **containerization**, **CI/CD**, **observability** and **monitoring** for the application.
 
-## Goal to implement 
+- `Front-End Container:` Hosts the website where users can input URLs.
+- `API Container:` Handles the QR code generation for given URLs.
+- `Storage Container:` Stores the generated QR codes.
+
+
+## DevOps Practices 
+
+- **`Docker`**: Used for containerizing the front-end (Next.js) and API (FastAPI) to ensure consistent deployment across environments.
+
+- **`GitHub Actions`**: Implements CI/CD pipelines to automate the deployment of containers when source code changes occur.
+
+- **`Terraform`**: Manages and provisions cloud infrastructure, specifically creating a Kubernetes cluster using Infrastructure as Code (IaC).
+
+- **`Kubernetes`**: Orchestrates the deployment and management of containerized applications, ensuring scalability and high availability.
+
+- **`AWS S3`**: Provides secure storage for generated QR codes, allowing for persistent data storage and easy accessibility.
+
+- **`Amazon CloudWatch`**: Monitors container metrics, providing insights for performance and operational monitoring.
+
+- **`Grafana`**: Enhances observability by visualizing metrics collected from the application, aiding in performance monitoring and troubleshooting.
 
 
 ## Project Workflow 
+![CICD Pipeline]()
 
-## Application
-
-**Front-End** - A web application where users can submit URLs.
-
-**API**: API that receives URLs and generates QR codes. The API stores the QR codes in cloud storage(AWS S3 Bucket).
 
 ## Running locally
 
