@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./front-end-nextjs
+    working_dir: /app
+    command: sh -c "npm run build && npm start"
+    ports:
+      - "3000:3000"  # Map host port 3000 to container port 3000
+    volumes:
+      - ./front-end-nextjs:/app
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend  # Ensure frontend waits for backend to start
+
+  backend:
+    build: ./api
+    ports:
+      - "8000:80"  # Map host port 8000 to container port 80 (FastAPI)
+    volumes:
+      - ./api:/usr/src/app  # Bind mount for live updates
+    environment:
+      - FASTAPI_ENV=production

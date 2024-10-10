@@ -1,0 +1,17 @@
+# Logs
+*.log
+*.log.*
+
+# Environment variables
+.env
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore local IDE settings
+.vscode/
+.idea/
+
+# Ignore Docker files (to prevent committing local docker-specific config)
+*.dockerignore
+docker-compose.override.yml
