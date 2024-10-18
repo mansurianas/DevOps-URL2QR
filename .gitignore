@@ -15,3 +15,8 @@
 # Ignore Docker files (to prevent committing local docker-specific config)
 *.dockerignore
 docker-compose.override.yml
+
+
+# terrafrom ingores
+*.terraform*
+*.tfstate*
