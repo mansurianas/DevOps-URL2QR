@@ -1,13 +1,15 @@
 ![DevOps-URL2QR Project](./Assets/DevOPs-url2qr.png)
 
-A web app that converts a **URL to a QR Code**. The app has three components: `Front-end`, `API` and `Storage`. All 3 components should be hosted in containers utilizing the cloud provider of your choice. The sample application code is provided, your goals is to apply `DevOps practices` like **containerization**, **CI/CD**, **observability** and **monitoring** for the application.
-
-- `Front-End Container:` Hosts the website where users can input URLs.
-- `API Container:` Handles the QR code generation for given URLs.
-- `Storage Container:` Stores the generated QR codes.
+This project focuses on creating a streamlined solution for generating QR codes from user-provided URLs. It features a user-friendly `Next.js` front end for URL input, a robust `FastAPI` backend for QR code generation, and a secure storage system for saving the generated codes.
 
 
-## DevOps Practices 
+- `Front-End Container:` User-facing website for URL input.
+- `API Container:` Backend service for QR code generation.
+- `Storage Container:` Secure storage for generated QR codes.
+
+
+
+## Cloud & DevOps Practices 
 
 - **`Docker`**: Used for containerizing the front-end (Next.js) and API (FastAPI) to ensure consistent deployment across environments.
 
