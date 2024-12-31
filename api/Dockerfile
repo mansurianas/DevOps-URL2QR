@@ -1,7 +1,7 @@
 FROM python:3.9
 
 # Set up the work directory in the container
-WORKDIR /usr/src/app  # Ensure the path is correct with the leading slash
+WORKDIR /usr/src/app  
 
 # Copy the dependency files to the working directory
 COPY requirements.txt ./
