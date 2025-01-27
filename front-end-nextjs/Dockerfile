@@ -26,11 +26,6 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
-# Create non-root user
-RUN adduser -S -u 1001 nextjs && \
-    chown -R nextjs:node /app/.next
-USER nextjs
-
 # Set environment variables
 EXPOSE 3000
 
