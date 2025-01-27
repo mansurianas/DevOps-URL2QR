@@ -1,20 +1,38 @@
-FROM node:18-alpine AS base
+# Stage 1: Builder with full Node.js environment
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+# Copy package files first for optimal caching
+COPY package.json package-lock.json ./
 
-RUN \
-if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-elif [ -f package-lock.json ]; then npm ci; \
-elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
-else echo "Lockfile not found." && exit 1; \
-fi
+# Install all dependencies (including devDependencies)
+RUN npm ci --no-audit --prefer-offline
 
+# Copy source files
 COPY . .
 
-RUN npm run build 
+# Build the application
+RUN npm run build
 
+# Stage 2: Production image
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy built assets and dependencies
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+# Create non-root user
+RUN adduser -S -u 1001 nextjs && \
+    chown -R nextjs:node /app/.next
+USER nextjs
+
+# Set environment variables
 EXPOSE 3000
 
-CMD ["npm","start"]
+# Start the application
+CMD ["npm", "start"]
