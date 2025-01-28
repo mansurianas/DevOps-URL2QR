@@ -36,9 +36,6 @@ COPY . .
 # Use virtual environment
 ENV PATH="/app/venv/bin:$PATH"
 
-# Run as non-root user for security
-RUN useradd -m appuser && chown -R appuser:appuser /app
-USER appuser
 
 # Runtime configuration
 EXPOSE 8000
