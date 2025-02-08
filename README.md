@@ -2,14 +2,11 @@
 
 This project focuses on creating a streamlined solution for generating QR codes from user-provided URLs. It features a user-friendly `Next.js` front end for URL input, a robust `FastAPI` backend for QR code generation, and a secure storage system for saving the generated codes.
 
-
 - `Front-End Container:` User-facing website for URL input.
 - `API Container:` Backend service for QR code generation.
 - `Storage Container:` Secure storage for generated QR codes.
 
-
-
-## Cloud & DevOps Practices 
+## Cloud & DevOps Practices
 
 - **`Docker`**: Used for containerizing the front-end (Next.js) and API (FastAPI) to ensure consistent deployment across environments.
 
@@ -25,39 +22,93 @@ This project focuses on creating a streamlined solution for generating QR codes 
 
 - **`Grafana`**: Enhances observability by visualizing metrics collected from the application, aiding in performance monitoring and troubleshooting.
 
+## Project Workflow
 
-## Project Workflow 
+<div align="center">
+  <img src="./Assets/DevOpsURL2QR.png.drawio.svg" alt="DevOps URL2QR Project Workflow">
+</div>
+
+## End to End CI/CD Pipeline
+
 ![CICD Pipeline]()
 
+## Running the project locally
 
-## Running locally
+### Run the Backend
 
-### API
+The Backend code exists in the `api` directory. You can run the API server locally:
 
-The API code exists in the `api` directory. You can run the API server locally:
+1. Clone this repo
 
-- Clone this repo
-- Make sure you are in the `api` directory
-- Create a virtualenv by typing in the following command: `python -m venv .venv`
-- Install the required packages: `pip install -r requirements.txt`
-- Create a `.env` file, and add your AWS Access and Secret key, check  `.env.example`
-- Also, change the BUCKET_NAME to your S3 bucket name in `main.py`
-- Run the API server: `uvicorn main:app --reload`
-- Your API Server should be running on port `http://localhost:8000`
+```bash
+git clone <repository-url>
+```
 
-### Front-end
+2. Make sure you are in the `api` directory
+
+```bash
+cd api
+```
+
+3. Create a virtualenv by typing in the following command:
+
+```bash
+python -m venv .venv
+```
+
+4. Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Create a `.env` file, and add your AWS Access and Secret key, check `.env.example` just run the below command
+
+```bash
+cp .env.example .env
+```
+
+6. Also, change the BUCKET_NAME to your S3 bucket name in `main.py`
+7. Run the API server:
+
+```bash
+uvicorn main:app --reload
+```
+
+8. Your API Server should be running on port
+   [ `http://localhost:8000`](http://localhost:8000)
+
+### Run the Front-end
 
 The front-end code exits in the `front-end-nextjs` directory. You can run the front-end server locally:
 
-- Clone this repo
-- Make sure you are in the `front-end-nextjs` directory
-- Install the dependencies: `npm install`
-- Run the NextJS Server: `npm run dev`
-- Your Front-end Server should be running on `http://localhost:3000`
+1. Make sure you are in the `front-end-nextjs` directory
 
-## Author
+```bash
+cd front-end-nextjs
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Run the NextJS Server:
+
+```bash
+npm run dev
+```
+
+4. Your Front-end Server should be running on [`http://localhost:3000`](`http://localhost:3000`)
+
+## This project is inpired by
 
 [Rishab Kumar](https://github.com/rishabkumar7)
+
+## Star 🌟 the project
+
+If you like this project so far don't forget to star 🤩 the project for future reference.
 
 ## License
 
