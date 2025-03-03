@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'api/Dockerfile'
-      - 'front-end-nextjs/Dockerfile'
+      - "api"
+      - "front-end-nextjs"
 
 jobs:
   build:
@@ -28,5 +28,3 @@ jobs:
         run: |
           docker push surajkumar00/devops-url2qr-api:latest
           docker push surajkumar00/devops-url2qr-frontend:latest
-
-

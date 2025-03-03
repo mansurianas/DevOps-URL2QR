@@ -107,7 +107,7 @@ export default function Home() {
                       onClick={handleDownload}
                       className="mt-2"
                     >
-                      Download PNG
+                      Download Your QR Code
                     </Button>
                   </div>
                 </div>

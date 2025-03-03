@@ -30,7 +30,7 @@ s3 = boto3.client(
     aws_secret_access_key=os.getenv("AWS_SECRET_KEY")
 )
 
-bucket_name = 'devopsurl2qr'  # Add your bucket name here
+bucket_name = 'devopsurl2qr' 
 
 @app.post("/generate-qr/")
 async def generate_qr(url: str):
