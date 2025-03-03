@@ -7,6 +7,7 @@ on:
     paths:
       - "../api/**"
       - "../front-end-nextjs/**"
+  workflow_dispatch:
 
 jobs:
   build:
