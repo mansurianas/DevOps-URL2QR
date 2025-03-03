@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "api"
-      - "front-end-nextjs"
+      - "../api/**"
+      - "../front-end-nextjs/**"
 
 jobs:
   build:
