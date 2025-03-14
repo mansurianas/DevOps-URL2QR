@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   frontend:
     build: ./front-end-nextjs
@@ -14,11 +13,11 @@ services:
       - backend
 
   backend:
-    build: ./api
+    build: ./backend
     ports:
       - "8000:8000" # Map host port 8000 to container port 80 (FastAPI)
     env_file:
-      - ./api/.env
+      - ./backend/.env
     volumes:
       - ./api:/usr/src/app # Bind mount for live updates
     environment:
