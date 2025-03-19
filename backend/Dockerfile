@@ -30,13 +30,13 @@ RUN apt-get update && \
 # Copy virtual environment from builder
 COPY --from=builder /app/venv /app/venv
 
-# Copy application code (consider .dockerignore to exclude unnecessary files)
+# Copy application code
 COPY . .
 
 # Use virtual environment
 ENV PATH="/app/venv/bin:$PATH"
 
 
-# Runtime configuration
+# Expose port and start application
 EXPOSE 8000
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

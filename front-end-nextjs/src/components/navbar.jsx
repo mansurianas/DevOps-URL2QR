@@ -35,7 +35,7 @@ export default function Navbar() {
             <FaTwitter className="h-5 w-5" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/surajkumar00/"
+            href="https://www.linkedin.com/in/surajkumar00"
             target="_blank"
             className="text-foreground/80 hover:text-foreground transition-colors"
           >
