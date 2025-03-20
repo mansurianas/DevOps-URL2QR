@@ -30,7 +30,7 @@ This project focuses on creating a streamlined solution for generating QR codes 
 
 ## End to End CI/CD Pipeline
 
-![CICD Pipeline]()
+![CICD Pipeline](./Assets/CICD-Pipeline.png)
 
 ## Running the project locally
 
