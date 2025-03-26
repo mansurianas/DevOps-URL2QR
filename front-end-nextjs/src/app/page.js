@@ -20,18 +20,16 @@ export default function Home() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(
-        `http://localhost:8000/generate-qr/?url=${encodeURIComponent(url)}`
-      );
-
+      const response = await axios.post(`/api/generate-qr?url=${url}`);
       setQrCodeUrl(response.data.qr_code_url);
+
       toast.success("QR Code generated successfully!", {
         description: "Your QR code is ready to use",
       });
     } catch (error) {
       console.error("Error generating QR Code:", error);
       toast.error("Generation failed", {
-        description: error.response?.data?.message || "Please try again later",
+        description: error.response?.data?.error || "Please try again later",
       });
     } finally {
       setIsLoading(false);
