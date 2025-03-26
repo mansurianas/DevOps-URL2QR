@@ -24,7 +24,7 @@ kind: Service
 metadata:
   name: qr-backend-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: qr-backend
   ports:

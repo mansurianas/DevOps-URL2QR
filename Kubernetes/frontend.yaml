@@ -15,9 +15,6 @@ spec:
       containers:
         - name: qr-frontend
           image: surajkumar00/devops-url2qr-frontend:latest
-          env:
-            - name: NEXT_PUBLIC_API_BASE_URL
-              value: "http://qr-backend-service"
           ports:
             - containerPort: 3000
 
@@ -27,7 +24,7 @@ kind: Service
 metadata:
   name: qr-frontend-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: qr-frontend
   ports:
