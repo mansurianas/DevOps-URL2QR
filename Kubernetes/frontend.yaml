@@ -17,6 +17,9 @@ spec:
           image: surajkumar00/devops-url2qr-frontend:latest
           ports:
             - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: frontend-config
 
 ---
 apiVersion: v1
@@ -24,7 +27,7 @@ kind: Service
 metadata:
   name: qr-frontend-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: qr-frontend
   ports:
