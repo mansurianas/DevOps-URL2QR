@@ -10,8 +10,9 @@ export async function POST(request) {
   }
 
   try {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://qr-backend-service:8000";
     const response = await axios.post(
-      `http://qr-backend-service/generate-qr/?url=${encodeURIComponent(url)}`
+      `${backendUrl}/generate-qr/?url=${encodeURIComponent(url)}`
     );
     return NextResponse.json(response.data);
   } catch (error) {
