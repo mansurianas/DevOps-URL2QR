@@ -2,6 +2,9 @@
 *.log
 *.log.*
 
+# secrets not to be committed
+*/backend-secret.yml
+
 # Environment variables
 .env
 
