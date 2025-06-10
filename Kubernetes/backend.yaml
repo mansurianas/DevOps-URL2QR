@@ -17,6 +17,9 @@ spec:
           image: surajkumar00/devops-url2qr-backend:latest
           ports:
             - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: mysecret
 
 ---
 apiVersion: v1
