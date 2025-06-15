@@ -15,12 +15,14 @@ This project focuses on creating a streamlined solution for generating QR codes 
 - **`Terraform`**: Manages and provisions cloud infrastructure, specifically creating a Kubernetes cluster using Infrastructure as Code (IaC).
 
 - **`Kubernetes`**: Orchestrates the deployment and management of containerized applications, ensuring scalability and high availability.
+  - **`KIND(Kubernetes in Docker)`** Deploying application to test the functionality localy using Kind Cluster. 
+  - **`AWS EKS`**: Deploying the application on prodcution using AWS EKS cluster. 
 
 - **`AWS S3`**: Provides secure storage for generated QR codes, allowing for persistent data storage and easy accessibility.
 
-- **`Amazon CloudWatch`**: Monitors container metrics, providing insights for performance and operational monitoring.
+- **`Prometheus`**: Monitors container and system metrics, offering real-time insights for performance and operational monitoring.
 
-- **`Grafana`**: Enhances observability by visualizing metrics collected from the application, aiding in performance monitoring and troubleshooting.
+- **`Grafana`**: Visualizes metrics collected from Prometheus and other sources, enhancing observability and aiding in performance monitoring and troubleshooting.
 
 ## Project Workflow
 
