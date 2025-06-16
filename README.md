@@ -34,6 +34,77 @@ This project focuses on creating a streamlined solution for generating QR codes 
 
 ![CICD Pipeline](./Assets/CICD-Pipeline.png)
 
+## Quick Start with Docker 
+
+This is the fastest way to get the application running on your local machine.
+
+### Prerequisites
+
+- Docker Desktop / Docker Daemon installed on your machine
+- Git (to clone the repository)
+
+### Steps to Run with Docker
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd DevOps-URL2QR
+   ```
+
+2. **First-time setup**
+   ```bash
+   docker compose up --build
+   ```
+   This command will:
+   - Build all container images
+   - Create necessary networks
+   - Start all services
+   - The frontend will be available at http://localhost:3000
+   - The backend API will be available at http://localhost:8000
+
+3. **Subsequent runs**
+   ```bash
+   docker compose up
+   ```
+   Use this command when you haven't made any changes to the Dockerfile or dependencies.
+
+4. **Stop the application**
+   ```bash
+   docker compose down
+   ```
+   This will stop and remove all containers, but preserve your images.
+
+### Additional Docker Commands
+
+- To view logs of a specific service:
+  ```bash
+  docker compose logs frontend  # For frontend logs
+  docker compose logs backend   # For backend logs
+  ```
+
+- To rebuild a specific service:
+  ```bash
+  docker compose up --build frontend  # Rebuild frontend only
+  docker compose up --build backend   # Rebuild backend only
+  ```
+
+- To remove all containers and images (clean slate):
+  ```bash
+  docker compose down --rmi all
+  ```
+
+### Troubleshooting
+
+- If you see connection errors, ensure all services are up:
+  ```bash
+  docker compose ps
+  ```
+
+- If the frontend can't connect to the backend, check the logs:
+  ```bash
+  docker compose logs backend
+  ```
+
 ## Running the project locally
 
 ### Run the Backend
