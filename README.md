@@ -32,7 +32,7 @@ This project focuses on creating a streamlined solution for generating QR codes 
 
 ## End to End CI/CD Pipeline
 
-![CICD Pipeline](./Assets/CICD-Pipeline.png)
+![CICD Pipeline](./Assets/PIPELINE.png)
 
 ## Quick Start with Docker 
 
