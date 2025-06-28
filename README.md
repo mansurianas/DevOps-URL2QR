@@ -30,7 +30,120 @@ This project focuses on creating a streamlined solution for generating QR codes 
   <img src="./Assets/DevOpsURL2QR.png.drawio.svg" alt="DevOps URL2QR Project Workflow">
 </div>
 
-## End to End CI/CD Pipeline
+## DevOps-URL2QR: Complete Local Testing Guide
+
+This guide provides step-by-step instructions to test the QR Code Generator application entirely in your local development environment. 
+
+###  🛠️ Prerequisites
+
+Before starting, ensure you have the following installed and configured:
+
+Git for version control
+
+Python 3.10+ and pip
+
+Node.js (v14+) and npm (preferably within WSL/Linux)
+
+AWS S3 Bucket named my-qr-bucket-123, with an IAM user that has:
+
+Programmatic access keys (access key & secret key)
+
+Permissions to s3:PutObject, s3:GetObject, and s3:ListBucket
+
+## Backend: Setup and Test Locally
+
+### Change to the backend directory:
+
+`cd DevOps-URL2QR/backend`
+
+### Create and activate a Python virtual environment:
+
+`python3 -m venv .venv
+source .venv/bin/activate`
+
+### Install Python dependencies:
+
+`pip install -r requirements.txt`
+
+### Configure environment variables:
+
+Copy the template:
+
+`cp .env.example .env`
+
+Open .env and fill in your AWS credentials and bucket name:
+
+`AWS_ACCESS_KEY=YOUR_ACCESS_KEY
+AWS_SECRET_KEY=YOUR_SECRET_KEY
+BUCKET_NAME=my-qr-bucket-123`
+
+### Run unit tests (optional but recommended):
+
+`pytest test_main.py`
+
+### Start the FastAPI server:
+
+`uvicorn main:app --reload`
+
+### Verify the API:
+
+`Open the interactive docs at: http://localhost:8000/docs`
+
+Execute the POST /generate-qr/ endpoint with a sample URL, e.g., https://openai.com
+
+`You should receive a JSON response containing qr_code_url`
+
+
+
+##  Frontend: Setup and Test Locally
+
+`Open a new terminal window (keep the backend running).`
+
+### Change to the frontend directory:
+
+`cd DevOps-URL2QR/front-end-nextjs`
+
+### Ensure you are using Node/npm inside WSL/Linux:
+
+`which node
+which npm`
+
+Both should point to paths under /home/ubuntu/..., not a Windows drive.
+
+### Install Node dependencies:
+
+`npm install`
+
+### Run the Next.js development server:
+
+`npm run dev`
+
+### Open the web UI:
+
+`Navigate to http://localhost:3000`
+
+You should see the QR Code Generator interface.
+
+## Perform an end-to-end test:
+
+Enter a URL (e.g., https://openai.com) and click Generate QR Code.
+
+The frontend will call the FastAPI backend, generate the QR code, upload it to S3, and display it.
+
+Click Download Your QR Code to verify that the image downloads correctly.
+
+##  Debugging Tips
+
+`500 Internal Server Error:` Check that your .env values are correct and that your IAM user has the required S3 permissions for my-qr-bucket-123.
+
+
+`Frontend not finding pages:` Always run npm run dev from the project root within WSL so Next.js can detect the src/app directory.
+
+`ModuleNotFoundError (fastapi):` Activate your virtual environment and run pip install -r requirements.txt.
+
+
+
+# End to End CI/CD Pipeline
 
 ![CICD Pipeline](./Assets/PIPELINE.png)
 
