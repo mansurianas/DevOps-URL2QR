@@ -21,21 +21,21 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <Link
-            href="https://github.com/Suraj-kumar00"
+            href="https://github.com/mansurianas"
             target="_blank"
             className="text-foreground/80 hover:text-foreground transition-colors"
           >
             <FaGithub className="h-5 w-5" />
           </Link>
           <Link
-            href="https://x.com/surajk_umar01"
+            href="https://x.com/Anas108489?t=kddo0Z6oK2I3zpvoX5WcFA&s=09"
             target="_blank"
             className="text-foreground/80 hover:text-foreground transition-colors"
           >
             <FaTwitter className="h-5 w-5" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/surajkumar00"
+            href="https://www.linkedin.com/in/anas0001/"
             target="_blank"
             className="text-foreground/80 hover:text-foreground transition-colors"
           >
