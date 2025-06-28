@@ -34,7 +34,7 @@ This project focuses on creating a streamlined solution for generating QR codes 
 
 This guide provides step-by-step instructions to test the QR Code Generator application entirely in your local development environment. 
 
-###  🛠️ Prerequisites
+###   Prerequisites
 
 Before starting, ensure you have the following installed and configured:
 
